@@ -1,0 +1,126 @@
+{
+  "phase": 5,
+  "phase_title": "Retrieval + Verification + Color Robustness + End-to-End Inference",
+  "status": "completed",
+  "retrieval": {
+    "task": "Pattern-Family Proxy Retrieval",
+    "query_count": 220,
+    "gallery_size": 1027,
+    "similarity_metric": "cosine_similarity",
+    "query_self_exclusion": true,
+    "Recall@1": 0.8772727272727273,
+    "Recall@3": 0.9181818181818182,
+    "Recall@5": 0.9363636363636364,
+    "Recall@10": 0.9727272727272728,
+    "MRR": 0.9079141983747246
+  },
+  "verification": {
+    "task": "Pattern-Family Proxy Verification",
+    "threshold_selection_protocol": "validation_set_only",
+    "validation_selected_threshold": 0.2895,
+    "validation_f1": 0.7015,
+    "validation_accuracy": 0.6256,
+    "validation_precision": 0.5833,
+    "validation_recall": 0.88,
+    "validation_fpr": 0.6288,
+    "validation_fnr": 0.12,
+    "validation_roc_auc": 0.6966,
+    "test_evaluation_with_fixed_threshold": {
+      "fixed_threshold": 0.2895,
+      "total_test_pairs": 1600,
+      "positive_pairs": 800,
+      "negative_pairs": 800,
+      "accuracy": 0.5763,
+      "precision": 0.5478,
+      "recall": 0.8738,
+      "f1": 0.6734,
+      "specificity": 0.2788,
+      "fpr": 0.7212,
+      "fnr": 0.1263,
+      "roc_auc": 0.6529,
+      "pr_auc": 0.6480
+    }
+  },
+  "color_robustness": {
+    "task": "Synthetic Color Robustness Evaluation",
+    "evaluated_test_images": 220,
+    "baseline_retrieval_recall_at_1": 0.8773,
+    "overall_mean_similarity": 0.6824,
+    "overall_median_similarity": 0.6883,
+    "overall_classification_consistency_pct": 54.39,
+    "mean_retrieval_recall_at_1": 0.7955,
+    "mean_relative_recall_retention_pct": 90.67,
+    "transforms": {
+      "original": {
+        "mean_similarity": 1.0,
+        "median_similarity": 1.0,
+        "consistency_pct": 100.0,
+        "recall_at_1": 0.8773
+      },
+      "color_jitter": {
+        "mean_similarity": 0.7619,
+        "median_similarity": 0.7656,
+        "consistency_pct": 65.0,
+        "recall_at_1": 0.8455
+      },
+      "hue_shift_light": {
+        "mean_similarity": 0.7366,
+        "median_similarity": 0.7318,
+        "consistency_pct": 63.64,
+        "recall_at_1": 0.8364
+      },
+      "channel_shuffle": {
+        "mean_similarity": 0.677,
+        "median_similarity": 0.684,
+        "consistency_pct": 60.45,
+        "recall_at_1": 0.7864
+      },
+      "color_invert": {
+        "mean_similarity": 0.7104,
+        "median_similarity": 0.7315,
+        "consistency_pct": 50.45,
+        "recall_at_1": 0.7227
+      },
+      "hue_shift_heavy": {
+        "mean_similarity": 0.5782,
+        "median_similarity": 0.5804,
+        "consistency_pct": 45.45,
+        "recall_at_1": 0.7364
+      },
+      "grayscale": {
+        "mean_similarity": 0.6305,
+        "median_similarity": 0.6362,
+        "consistency_pct": 41.36,
+        "recall_at_1": 0.8455
+      }
+    }
+  },
+  "case_evaluation": {
+    "status": "not_available",
+    "case_evaluation": "NOT AVAILABLE",
+    "reason": "No verified design_id/color_id ground truth exists in the supplied datasets.",
+    "supported_interface": [
+      "image_a",
+      "image_b",
+      "design_id_a",
+      "design_id_b",
+      "color_id_a",
+      "color_id_b"
+    ],
+    "protocols": [
+      "Protocol 1: Cross-Colorway Same-Design Retrieval",
+      "Protocol 2: Color-Distractor Discrimination",
+      "Protocol 3: Hard-Pair Verification"
+    ],
+    "pipeline_readiness": "ready_for_future_verified_data"
+  },
+  "handloom_status": "Handloom collection (165 images) is preserved under outputs/results/handloom_unlabeled.csv and outputs/embeddings/handloom_embeddings.npy. It is fully operational as an open-set unlabelled query gallery, but strictly excluded from supervised evaluation to preserve scientific integrity.",
+  "limitations": [
+    "No verified fine-grained design IDs exist in the dataset; all training and evaluation use Proxy Task A (4 coarse pattern families).",
+    "No ground-truth colorway labels or verified same-design/different-color pairs exist.",
+    "Pattern family != design ID; pattern-family retrieval does not equal fine-grained design identification.",
+    "Synthetic color augmentation and perturbation robustness do not equal proven color-invariance across authentic artisan dyeings.",
+    "Roboflow augmentation groups are used strictly for zero-leakage split integrity, not as design classes.",
+    "Handloom images lack design annotations and cannot be evaluated for supervised accuracy."
+  ]
+}

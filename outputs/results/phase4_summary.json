@@ -1,0 +1,81 @@
+{
+  "phase": 4,
+  "status": "completed",
+  "dataset": {
+    "train_count": 1027,
+    "val_count": 221,
+    "test_count": 220,
+    "pattern_family_counts": {
+      "Banarasi": 349,
+      "Bandhani": 233,
+      "Pichwai": 233,
+      "Ikat": 212
+    }
+  },
+  "environment": {
+    "python_version": "3.14.5",
+    "pytorch_version": "2.14.1+cpu",
+    "torchvision_version": "0.29.1+cpu",
+    "cuda_available": false,
+    "device": "cpu",
+    "hardware_device_name": "CPU"
+  },
+  "classification_model": {
+    "architecture": "EfficientNet-B0",
+    "pretrained": true,
+    "freeze_backbone": true,
+    "input_size": [
+      224,
+      224
+    ],
+    "loss": "CrossEntropyLoss",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "epochs_run": 3,
+    "best_epoch": 3,
+    "test_accuracy": 0.6090909090909091,
+    "test_macro_precision": 0.6548784548784549,
+    "test_macro_recall": 0.6086729781771502,
+    "test_macro_f1": 0.5828608249442631
+  },
+  "metric_model": {
+    "architecture": "EfficientNet-B0 + 256-D L2 Projection",
+    "embedding_dimension": 256,
+    "loss": "BatchHardTripletLoss",
+    "margin": 0.2,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "best_epoch": 3,
+    "test_recall_at_1": 0.8772727272727273,
+    "test_recall_at_3": 0.9181818181818182,
+    "test_recall_at_5": 0.9363636363636364,
+    "test_recall_at_10": 0.9727272727272728,
+    "test_mrr": 0.9079141983747246
+  },
+  "efficiency": {
+    "device": "cpu",
+    "total_parameters": 4337024,
+    "trainable_parameters": 4337024,
+    "embedding_dimension": 256,
+    "checkpoint_size_mb": 19.348,
+    "single_image_latency_ms_mean": 68.59274333110079,
+    "single_image_latency_ms_std": 3.99399402766262,
+    "batch_latency_ms_mean": 2234.1928499983624,
+    "batch_latency_ms_std": 92.4364178721742,
+    "batch_size": 32
+  },
+  "leakage_verification": {
+    "md5_leakage": false,
+    "augmentation_leakage": false,
+    "path_leakage": false
+  },
+  "limitations": [
+    "No verified fine-grained design IDs exist in dataset; labels are coarse pattern families (Proxy Task A).",
+    "No reliable color labels exist; heuristic color keywords are not ground truth.",
+    "No verified same-design/different-color pairs exist; true CASE color invariance cannot be claimed.",
+    "Pattern-family labels are coarse proxy labels (Banarasi, Bandhani, Ikat, Pichwai).",
+    "Roboflow augmentation groups are used strictly to avoid data leakage across splits.",
+    "Color augmentation experiments assess perturbation robustness, not certified colorway invariance.",
+    "Handloom images are completely unlabeled and reserved for unguided inference."
+  ]
+}

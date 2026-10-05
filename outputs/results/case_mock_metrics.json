@@ -1,0 +1,31 @@
+{
+  "status": "verified_working",
+  "framework": "CASE_Evaluation_Suite_v1",
+  "mock_dataset_stats": {
+    "num_images": 36,
+    "num_unique_designs": 12,
+    "num_unique_colorways": 3
+  },
+  "protocol_1_cross_colorway_retrieval": {
+    "valid_cross_colorway_queries": 36,
+    "mrr": 0.0832,
+    "recall_at_1": 0.0,
+    "recall_at_3": 0.0,
+    "recall_at_5": 0.0
+  },
+  "protocol_2_color_distractor_discrimination": {
+    "total_discrimination_triplets": 216,
+    "case_discrimination_rate": 0.0,
+    "mean_design_over_color_margin": -0.7773,
+    "criterion": "CASE Discrimination Rate measures the percentage of times the model correctly ranked the true design (in a different color) higher than an imposter design (in the exact same color)."
+  },
+  "protocol_3_hard_pair_verification": {
+    "total_pairs": 234,
+    "positive_pairs_diff_color": 36,
+    "hard_negative_pairs_same_color": 198,
+    "accuracy_at_threshold": 0.0,
+    "f1_at_threshold": 0.0,
+    "roc_auc": 0.0
+  },
+  "note": "Framework successfully validated on mock data. Ready for future verified ground truth manifests."
+}

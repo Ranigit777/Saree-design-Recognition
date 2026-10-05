@@ -1,0 +1,18 @@
+{
+  "task": "Pattern-Family Proxy Retrieval",
+  "status": "completed",
+  "protocol": "test_queries_vs_train_gallery",
+  "num_test_queries": 220,
+  "gallery_size": 1027,
+  "query_self_exclusion": true,
+  "similarity_metric": "cosine_similarity",
+  "proxy_labels_used": ["Banarasi", "Bandhani", "Ikat", "Pichwai"],
+  "metrics": {
+    "Recall@1": 0.8772727272727273,
+    "Recall@3": 0.9181818181818182,
+    "Recall@5": 0.9363636363636364,
+    "Recall@10": 0.9727272727272728,
+    "MRR": 0.9079141983747246
+  },
+  "scientific_disclaimer": "These metrics represent Pattern-Family Proxy Retrieval across 4 coarse style families. They do NOT represent fine-grained saree design recognition or authentic CASE color invariance, because the dataset lacks verified design IDs and ground-truth colorway annotations."
+}

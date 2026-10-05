@@ -1,0 +1,9 @@
+{
+  "num_vectors": 1633,
+  "embedding_dimension": 256,
+  "norm_min": 0.9999998807907104,
+  "norm_max": 1.0000001192092896,
+  "norm_mean": 1.0,
+  "norm_std": 4.0955686841925854e-08,
+  "approximately_l2_normalized": true
+}

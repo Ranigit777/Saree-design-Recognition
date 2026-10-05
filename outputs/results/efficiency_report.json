@@ -1,0 +1,12 @@
+{
+  "device": "cpu",
+  "total_parameters": 4337024,
+  "trainable_parameters": 4337024,
+  "embedding_dimension": 256,
+  "checkpoint_size_mb": 19.348,
+  "single_image_latency_ms_mean": 68.59274333110079,
+  "single_image_latency_ms_std": 3.99399402766262,
+  "batch_latency_ms_mean": 2234.1928499983624,
+  "batch_latency_ms_std": 92.4364178721742,
+  "batch_size": 32
+}

@@ -1,0 +1,3 @@
+experiment,model,task,supervision,primary_metric,primary_score,secondary_metric,secondary_score
+Experiment A: Classifier Baseline,EfficientNet-B0 + CrossEntropy,Pattern-Family Proxy Classification,Proxy Coarse Labels (4 classes),Test Macro F1,0.5828608249442631,Test Accuracy,0.6090909090909091
+Experiment B: Metric Learning,EfficientNet-B0 + 256-D L2 Projection + BatchHard Triplet,Pattern-Family Proxy Retrieval,Proxy Metric Loss (Triplet margin=0.2),Test Recall@1,0.8772727272727273,Test MRR,0.9079141983747246

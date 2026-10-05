@@ -1,0 +1,214 @@
+{
+  "project_root": ".",
+  "inspected_paths": {
+    "deeplure_dir": "data/deeplure",
+    "deeplure_dir_exists": false,
+    "indian_saree_dir": "data/indian_saree",
+    "indian_saree_dir_exists": false
+  },
+  "archives_in_data": [
+    "data/handloom_sarees-20261005T100532Z-1-001.zip",
+    "data/Indian saree Patterns.zip"
+  ],
+  "archive_to_dataset_heuristic": {
+    "deeplure": [
+      "data/handloom_sarees-20261005T100532Z-1-001.zip"
+    ],
+    "indian_saree": [
+      "data/Indian saree Patterns.zip"
+    ],
+    "unassigned": []
+  },
+  "counts": {
+    "total_images": 1633,
+    "total_folders_observed": 14,
+    "corrupted_images": 0,
+    "duplicate_content_hash_groups": 5,
+    "metadata_files": 2,
+    "csv_files": 0,
+    "json_files": 0,
+    "txt_files": 2,
+    "images_by_source_root": {
+      "data/Indian saree Patterns.zip": 1468,
+      "data/handloom_sarees-20261005T100532Z-1-001.zip": 165
+    }
+  },
+  "image_extensions": {
+    ".jpg": 1633
+  },
+  "dimension_summary": {
+    "unique_dimension_pairs": 79,
+    "most_common_dimensions": [
+      {
+        "width": 640,
+        "height": 640,
+        "count": 1468
+      },
+      {
+        "width": 641,
+        "height": 641,
+        "count": 6
+      },
+      {
+        "width": 1511,
+        "height": 1512,
+        "count": 6
+      },
+      {
+        "width": 610,
+        "height": 610,
+        "count": 5
+      },
+      {
+        "width": 730,
+        "height": 730,
+        "count": 5
+      },
+      {
+        "width": 598,
+        "height": 598,
+        "count": 5
+      },
+      {
+        "width": 662,
+        "height": 662,
+        "count": 5
+      },
+      {
+        "width": 893,
+        "height": 893,
+        "count": 4
+      },
+      {
+        "width": 567,
+        "height": 567,
+        "count": 4
+      },
+      {
+        "width": 919,
+        "height": 919,
+        "count": 4
+      },
+      {
+        "width": 589,
+        "height": 589,
+        "count": 4
+      },
+      {
+        "width": 1512,
+        "height": 1512,
+        "count": 4
+      },
+      {
+        "width": 227,
+        "height": 227,
+        "count": 4
+      },
+      {
+        "width": 553,
+        "height": 553,
+        "count": 4
+      },
+      {
+        "width": 590,
+        "height": 589,
+        "count": 4
+      }
+    ]
+  },
+  "labels_and_ids": {
+    "verified_design_ids_present": false,
+    "design_id_values": [],
+    "folder_derived_possible_labels": [
+      "Banarasi",
+      "Bandhani",
+      "Ikat",
+      "Pichwai"
+    ],
+    "filename_inferred_possible_color_count": 94,
+    "note": "possible_label is inferred from folder names where structure is explicit (e.g. Roboflow train/valid/test class folders). possible_design_id is left empty unless a verified ID column/file exists. possible_color from filenames is heuristic only, not ground truth."
+  },
+  "metadata_files": [
+    {
+      "path": "data/Indian saree Patterns.zip::README.dataset.txt",
+      "extension": ".txt",
+      "size_bytes": 151,
+      "dataset_root": "indian_saree (archive)",
+      "storage": "zip"
+    },
+    {
+      "path": "data/Indian saree Patterns.zip::README.roboflow.txt",
+      "extension": ".txt",
+      "size_bytes": 1117,
+      "dataset_root": "indian_saree (archive)",
+      "storage": "zip"
+    }
+  ],
+  "sample_filenames": [
+    "img_981759.jpg",
+    "img_961476.jpg",
+    "img_978752.jpg",
+    "img_966256.jpg",
+    "img_889324.jpg",
+    "img_987571.jpg",
+    "img_987632.jpg",
+    "img_892336.jpg",
+    "img_982056.jpg",
+    "img_960789.jpg",
+    "img_927947.jpg",
+    "img_808059.jpg",
+    "img_927463.jpg",
+    "img_845893.jpg",
+    "img_874118.jpg"
+  ],
+  "problems": [],
+  "notes": [
+    "Expected directory missing: data/deeplure",
+    "Expected directory missing: data/indian_saree",
+    "Inspecting archive (read-only, not extracted): data/handloom_sarees-20261005T100532Z-1-001.zip",
+    "Inspecting archive (read-only, not extracted): data/Indian saree Patterns.zip"
+  ],
+  "duplicate_image_groups_sample": [
+    {
+      "content_hash": "131cbf276c9b9962420b95ae776a6bce",
+      "count": 2,
+      "paths": [
+        "data/Indian saree Patterns.zip::train/Ikat/f23-3_28011e9d-4d11-40a8-8ead-d1570fd16907_1200x_jpg.rf.31af75e0f1f0c84aec1abcb68c0a0fe8.jpg",
+        "data/Indian saree Patterns.zip::train/Ikat/f23-3_28011e9d-4d11-40a8-8ead-d1570fd16907_1200x_jpg.rf.6050478d7b0904ac25be3ba6ed3166f7.jpg"
+      ]
+    },
+    {
+      "content_hash": "4b62c137c8dd3af3709d8ed82a82073f",
+      "count": 2,
+      "paths": [
+        "data/Indian saree Patterns.zip::train/Bandhani/image31_jpeg.rf.4b66acafcab415052bf7c3606ee45982.jpg",
+        "data/Indian saree Patterns.zip::train/Bandhani/image31_jpeg.rf.e4507719b75e91abc905d77fa95a28ae.jpg"
+      ]
+    },
+    {
+      "content_hash": "a283c2ceb8fd2d0d59b4fb4511e22e99",
+      "count": 2,
+      "paths": [
+        "data/Indian saree Patterns.zip::train/Pichwai/Instagrampost-251_800x_png.rf.07dba6d6ab9c7b805e4a4fa7e8586490.jpg",
+        "data/Indian saree Patterns.zip::train/Pichwai/Instagrampost-251_800x_png.rf.9a9325ebcb2dd24bc837901c647108ab.jpg"
+      ]
+    },
+    {
+      "content_hash": "a81fde62ce0f377cf2d70045e7d47dc9",
+      "count": 2,
+      "paths": [
+        "data/Indian saree Patterns.zip::train/Bandhani/20210407_103036-480x480_jpg.rf.0edc4da9daa1694820add04d2e201a8c.jpg",
+        "data/Indian saree Patterns.zip::train/Bandhani/20210407_103036-480x480_jpg.rf.92f83d9aaf59296fb89fe59689a46491.jpg"
+      ]
+    },
+    {
+      "content_hash": "f62b9bf71b003f73b7a04e93e4ad8f5b",
+      "count": 2,
+      "paths": [
+        "data/Indian saree Patterns.zip::train/Pichwai/fab-14050_800x_jpg.rf.804e68a7cceccad74c6f0d61f82eb516.jpg",
+        "data/Indian saree Patterns.zip::train/Pichwai/fab-14050_800x_jpg.rf.b7a1c91973f41ebc94a1d2f8d6a6798e.jpg"
+      ]
+    }
+  ],
+  "corrupted_image_paths": []
+}

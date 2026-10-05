@@ -1,0 +1,67 @@
+{
+  "total_images": 1633,
+  "usable_images": 1633,
+  "images_by_dataset": {
+    "indian_patterns": 1468,
+    "handloom": 165
+  },
+  "images_by_pattern_family": {
+    "Banarasi": 489,
+    "Ikat": 342,
+    "Pichwai": 321,
+    "Bandhani": 316,
+    "unknown": 165
+  },
+  "images_by_original_split": {
+    "train": 1293,
+    "valid": 115,
+    "test": 60
+  },
+  "number_of_duplicate_groups": 5,
+  "number_of_duplicate_images": 10,
+  "image_width_statistics": {
+    "count": 1633,
+    "min": 226.0,
+    "max": 1512.0,
+    "mean": 657.6638089406001,
+    "median": 640.0,
+    "std": 116.77758057883861
+  },
+  "image_height_statistics": {
+    "count": 1633,
+    "min": 226.0,
+    "max": 1512.0,
+    "mean": 658.3386405388854,
+    "median": 640.0,
+    "std": 117.48770370385843
+  },
+  "aspect_ratio_statistics": {
+    "count": 1633,
+    "min": 0.7494356659142212,
+    "max": 1.0021276595744681,
+    "mean": 0.9992435434176496,
+    "median": 1.0,
+    "std": 0.013818219599000892
+  },
+  "quality_summary": {
+    "corrupted_or_unreadable": 0,
+    "extremely_small": 0,
+    "grayscale_mode_count": 0,
+    "rgb_like_count": 1633
+  },
+  "augmentation_analysis": {
+    "reliable_augmentation_groups_recovered": true,
+    "grouping_method": "filename_stem_before_.rf._32hex_hash",
+    "total_groups": 606,
+    "group_size_distribution": {
+      "1": 175,
+      "3": 431
+    },
+    "fraction_groups_of_size_3": 0.7112,
+    "interpretation": "Augmentation groups are heuristic clusters of export variants sharing a Roboflow stem; they are NOT verified fine-grained design IDs. Exact-duplicate MD5 groups may overlap with augmentation groups.",
+    "relationship_not_verified_as_design_id": true
+  },
+  "verified_design_ids_exist": false,
+  "ground_truth_color_labels_exist": false,
+  "verified_color_invariance_pairs_exist": false
+}

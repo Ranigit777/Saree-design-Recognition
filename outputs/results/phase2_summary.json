@@ -1,0 +1,49 @@
+{
+  "extracted_image_count": 1633,
+  "usable_image_count": 1633,
+  "duplicate_image_count": 10,
+  "duplicate_group_count": 5,
+  "pattern_family_counts": {
+    "Banarasi": 489,
+    "Ikat": 342,
+    "Pichwai": 321,
+    "Bandhani": 316,
+    "unknown": 165
+  },
+  "handloom_count": 165,
+  "design_ids_exist": false,
+  "color_labels_exist": false,
+  "reliable_augmentation_source_groups": true,
+  "augmentation_groups_note": "Stem-based groups align with README (many size-3 sets) for leakage control only; not verified design IDs or color-invariance pairs.",
+  "verified_color_invariance_pairs_exist": false,
+  "limitations": [
+    "The supplied datasets do not contain verified fine-grained design identifiers or ground-truth same-design/different-color pairs.",
+    "Indian pattern folders (Banarasi, Bandhani, Ikat, Pichwai) are pattern-family labels only, not design IDs.",
+    "Handloom img_* filenames are product/image identifiers, not verified design IDs.",
+    "heuristic_color is filename-based and must not be used as ground truth."
+  ],
+  "extraction": {
+    "generated_at_utc": "2026-10-05T10:53:46.154020+00:00",
+    "note": "Original ZIP files under data/ were not modified or deleted.",
+    "extractions": [
+      {
+        "source_zip": "data/handloom_sarees-20261005T100532Z-1-001.zip",
+        "destination_dir": "data/deeplure",
+        "zip_exists": true,
+        "extracted": false,
+        "skipped_reason": "destination_already_populated",
+        "files_in_zip": 165,
+        "bytes_extracted": 18939992
+      },
+      {
+        "source_zip": "data/Indian saree Patterns.zip",
+        "destination_dir": "data/indian_saree",
+        "zip_exists": true,
+        "extracted": false,
+        "skipped_reason": "destination_already_populated",
+        "files_in_zip": 1470,
+        "bytes_extracted": 115524949
+      }
+    ]
+  }
+}

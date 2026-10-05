@@ -1,0 +1,85 @@
+{
+  "task": "color_augmentation_robustness_experiment",
+  "baseline_retrieval_recall_at_1": 0.8773,
+  "total_test_images_evaluated": 220,
+  "transformations_evaluated": {
+    "original": {
+      "description": "Original Baseline (No transform)",
+      "mean_cosine_similarity": 1.0,
+      "std_cosine_similarity": 0.0,
+      "min_cosine_similarity": 1.0,
+      "max_cosine_similarity": 1.0,
+      "retrieval_recall_at_1": 0.8773,
+      "relative_recall_retention": 1.0,
+      "self_identification_top1_acc": 1.0,
+      "self_identification_top5_acc": 1.0
+    },
+    "hue_shift_light": {
+      "description": "Light Hue Shift (+0.10)",
+      "mean_cosine_similarity": 0.7366,
+      "std_cosine_similarity": 0.1298,
+      "min_cosine_similarity": 0.3837,
+      "max_cosine_similarity": 0.9986,
+      "retrieval_recall_at_1": 0.8364,
+      "relative_recall_retention": 0.9534,
+      "self_identification_top1_acc": 0.5045,
+      "self_identification_top5_acc": 0.9727
+    },
+    "hue_shift_heavy": {
+      "description": "Heavy Hue Shift (+0.30)",
+      "mean_cosine_similarity": 0.5782,
+      "std_cosine_similarity": 0.1538,
+      "min_cosine_similarity": 0.2512,
+      "max_cosine_similarity": 0.9933,
+      "retrieval_recall_at_1": 0.7364,
+      "relative_recall_retention": 0.8394,
+      "self_identification_top1_acc": 0.3818,
+      "self_identification_top5_acc": 0.8136
+    },
+    "color_jitter": {
+      "description": "Color Jitter (Bright/Contrast/Sat)",
+      "mean_cosine_similarity": 0.7619,
+      "std_cosine_similarity": 0.115,
+      "min_cosine_similarity": 0.4134,
+      "max_cosine_similarity": 0.9484,
+      "retrieval_recall_at_1": 0.8455,
+      "relative_recall_retention": 0.9637,
+      "self_identification_top1_acc": 0.4727,
+      "self_identification_top5_acc": 0.9682
+    },
+    "grayscale": {
+      "description": "Grayscale (Complete Color Removal)",
+      "mean_cosine_similarity": 0.6305,
+      "std_cosine_similarity": 0.1271,
+      "min_cosine_similarity": 0.2654,
+      "max_cosine_similarity": 0.9956,
+      "retrieval_recall_at_1": 0.8455,
+      "relative_recall_retention": 0.9637,
+      "self_identification_top1_acc": 0.4455,
+      "self_identification_top5_acc": 0.9273
+    },
+    "channel_shuffle": {
+      "description": "Channel Swap (RGB -> BGR)",
+      "mean_cosine_similarity": 0.677,
+      "std_cosine_similarity": 0.131,
+      "min_cosine_similarity": 0.393,
+      "max_cosine_similarity": 0.9923,
+      "retrieval_recall_at_1": 0.7864,
+      "relative_recall_retention": 0.8964,
+      "self_identification_top1_acc": 0.4727,
+      "self_identification_top5_acc": 0.9227
+    },
+    "color_invert": {
+      "description": "Palette Inversion (255 - X)",
+      "mean_cosine_similarity": 0.7104,
+      "std_cosine_similarity": 0.1168,
+      "min_cosine_similarity": 0.4121,
+      "max_cosine_similarity": 0.9162,
+      "retrieval_recall_at_1": 0.7227,
+      "relative_recall_retention": 0.8238,
+      "self_identification_top1_acc": 0.4773,
+      "self_identification_top5_acc": 0.9909
+    }
+  },
+  "scientific_integrity_statement": "These synthetic color transformations measure embedding stability and perturbation sensitivity. They do NOT prove true color-invariance across authentic textile dyeings/colorways. True CASE color-invariance requires verified same-design / different-colorway pairs."
+}

@@ -1,0 +1,26 @@
+{
+  "status": "success",
+  "protocol": "validation_only_threshold_selection",
+  "selected_threshold": 0.2895,
+  "selection_metric": "max_f1_score",
+  "equal_error_rate_threshold": 0.3308,
+  "validation_pairs_count": 1600,
+  "validation_positive_pairs": 800,
+  "validation_negative_pairs": 800,
+  "validation_metrics_at_selected_threshold": {
+    "f1_score": 0.7015,
+    "accuracy": 0.6256,
+    "precision": 0.5833,
+    "recall": 0.88,
+    "fpr": 0.6288,
+    "fnr": 0.12,
+    "roc_auc": 0.6966
+  },
+  "similarity_distribution": {
+    "positive_mean": 0.3580490052700043,
+    "positive_std": 0.06821491569280624,
+    "negative_mean": 0.31278058886528015,
+    "negative_std": 0.055898357182741165
+  },
+  "note": "Selected threshold was derived EXCLUSIVELY on validation pairs; test labels were never touched."
+}

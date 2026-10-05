@@ -1,0 +1,193 @@
+{
+  "project": "AIE-CASE Color-Invariant Saree Design Recognition",
+  "dataset": {
+    "total_images": 1633,
+    "usable_images": 1633,
+    "indian_patterns_supervised": 1468,
+    "handloom_unlabeled": 165,
+    "pattern_families": {
+      "Banarasi": 489,
+      "Ikat": 342,
+      "Pichwai": 321,
+      "Bandhani": 316
+    }
+  },
+  "split": {
+    "train_count": 1027,
+    "val_count": 221,
+    "test_count": 220,
+    "split_strategy": "Leakage-safe connected component grouping by MD5 duplicates and Roboflow augmentation groups",
+    "random_seed": 42
+  },
+  "classification": {
+    "architecture": "EfficientNet-B0",
+    "pretrained": true,
+    "freeze_backbone": true,
+    "input_size": [
+      224,
+      224
+    ],
+    "loss": "CrossEntropyLoss",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "epochs_run": 3,
+    "best_epoch": 3,
+    "test_accuracy": 0.6090909090909091,
+    "test_macro_precision": 0.6548784548784549,
+    "test_macro_recall": 0.6086729781771502,
+    "test_macro_f1": 0.5828608249442631
+  },
+  "metric_learning": {
+    "architecture": "EfficientNet-B0 + 256-D L2 Projection",
+    "embedding_dimension": 256,
+    "loss": "BatchHardTripletLoss",
+    "margin": 0.2,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "best_epoch": 3,
+    "test_recall_at_1": 0.8772727272727273,
+    "test_recall_at_3": 0.9181818181818182,
+    "test_recall_at_5": 0.9363636363636364,
+    "test_recall_at_10": 0.9727272727272728,
+    "test_mrr": 0.9079141983747246
+  },
+  "retrieval": {
+    "task": "pattern_family_proxy_retrieval",
+    "query_count": 220,
+    "recall_at_1": 0.8772727272727273,
+    "recall_at_3": 0.9181818181818182,
+    "recall_at_5": 0.9363636363636364,
+    "recall_at_10": 0.9727272727272728,
+    "mrr": 0.9079141983747246
+  },
+  "verification": {
+    "validation_threshold": 0.2895,
+    "validation_f1": 0.7015,
+    "test_metrics": {
+      "accuracy": 0.5763,
+      "precision": 0.5478,
+      "recall": 0.8738,
+      "f1_score": 0.6734,
+      "roc_auc": 0.6529,
+      "false_positive_rate": 0.7212,
+      "false_negative_rate": 0.1263,
+      "true_positives": 699,
+      "true_negatives": 223,
+      "false_positives": 577,
+      "false_negatives": 101
+    }
+  },
+  "color_robustness": {
+    "original": {
+      "description": "Original Baseline (No transform)",
+      "mean_cosine_similarity": 1.0,
+      "std_cosine_similarity": 0.0,
+      "min_cosine_similarity": 1.0,
+      "max_cosine_similarity": 1.0,
+      "retrieval_recall_at_1": 0.8773,
+      "relative_recall_retention": 1.0,
+      "self_identification_top1_acc": 1.0,
+      "self_identification_top5_acc": 1.0
+    },
+    "hue_shift_light": {
+      "description": "Light Hue Shift (+0.10)",
+      "mean_cosine_similarity": 0.7366,
+      "std_cosine_similarity": 0.1298,
+      "min_cosine_similarity": 0.3837,
+      "max_cosine_similarity": 0.9986,
+      "retrieval_recall_at_1": 0.8364,
+      "relative_recall_retention": 0.9534,
+      "self_identification_top1_acc": 0.5045,
+      "self_identification_top5_acc": 0.9727
+    },
+    "hue_shift_heavy": {
+      "description": "Heavy Hue Shift (+0.30)",
+      "mean_cosine_similarity": 0.5782,
+      "std_cosine_similarity": 0.1538,
+      "min_cosine_similarity": 0.2512,
+      "max_cosine_similarity": 0.9933,
+      "retrieval_recall_at_1": 0.7364,
+      "relative_recall_retention": 0.8394,
+      "self_identification_top1_acc": 0.3818,
+      "self_identification_top5_acc": 0.8136
+    },
+    "color_jitter": {
+      "description": "Color Jitter (Bright/Contrast/Sat)",
+      "mean_cosine_similarity": 0.7619,
+      "std_cosine_similarity": 0.115,
+      "min_cosine_similarity": 0.4134,
+      "max_cosine_similarity": 0.9484,
+      "retrieval_recall_at_1": 0.8455,
+      "relative_recall_retention": 0.9637,
+      "self_identification_top1_acc": 0.4727,
+      "self_identification_top5_acc": 0.9682
+    },
+    "grayscale": {
+      "description": "Grayscale (Complete Color Removal)",
+      "mean_cosine_similarity": 0.6305,
+      "std_cosine_similarity": 0.1271,
+      "min_cosine_similarity": 0.2654,
+      "max_cosine_similarity": 0.9956,
+      "retrieval_recall_at_1": 0.8455,
+      "relative_recall_retention": 0.9637,
+      "self_identification_top1_acc": 0.4455,
+      "self_identification_top5_acc": 0.9273
+    },
+    "channel_shuffle": {
+      "description": "Channel Swap (RGB -> BGR)",
+      "mean_cosine_similarity": 0.677,
+      "std_cosine_similarity": 0.131,
+      "min_cosine_similarity": 0.393,
+      "max_cosine_similarity": 0.9923,
+      "retrieval_recall_at_1": 0.7864,
+      "relative_recall_retention": 0.8964,
+      "self_identification_top1_acc": 0.4727,
+      "self_identification_top5_acc": 0.9227
+    },
+    "color_invert": {
+      "description": "Palette Inversion (255 - X)",
+      "mean_cosine_similarity": 0.7104,
+      "std_cosine_similarity": 0.1168,
+      "min_cosine_similarity": 0.4121,
+      "max_cosine_similarity": 0.9162,
+      "retrieval_recall_at_1": 0.7227,
+      "relative_recall_retention": 0.8238,
+      "self_identification_top1_acc": 0.4773,
+      "self_identification_top5_acc": 0.9909
+    }
+  },
+  "efficiency": {
+    "device": "cpu",
+    "total_parameters": 4337024,
+    "trainable_parameters": 4337024,
+    "embedding_dimension": 256,
+    "checkpoint_size_mb": 19.348,
+    "single_image_latency_ms_mean": 68.59274333110079,
+    "single_image_latency_ms_std": 3.99399402766262,
+    "batch_latency_ms_mean": 2234.1928499983624,
+    "batch_latency_ms_std": 92.4364178721742,
+    "batch_size": 32
+  },
+  "case_evaluation": {
+    "status": "Framework ready for verified ground truth; mock validation passed",
+    "protocols_implemented": [
+      "Protocol 1: Cross-Colorway Same-Design Retrieval",
+      "Protocol 2: Color-Distractor Discrimination",
+      "Protocol 3: Hard-Pair Verification"
+    ],
+    "input_schema": [
+      "image_path",
+      "design_id",
+      "colorway_id"
+    ]
+  },
+  "limitations": [
+    "No verified fine-grained design IDs exist in dataset; labels are coarse pattern families (Proxy Task A).",
+    "No reliable color labels exist; heuristic color keywords are not ground truth.",
+    "No verified same-design/different-color pairs exist; true CASE color invariance cannot be claimed.",
+    "Pattern-family labels are coarse proxy labels (Banarasi, Bandhani, Ikat, Pichwai).",
+    "Roboflow augmentation groups are used strictly to avoid data leakage across splits.",
+    "Color augmentation experiments assess perturbation robustness, not certified colorway invariance.",
+    "Handloom images are completely unlabeled and reserved for unguided inference."
+  ]
+}

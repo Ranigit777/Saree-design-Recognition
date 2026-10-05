@@ -1,0 +1,32 @@
+{
+  "task": "pattern_family_proxy_verification",
+  "fixed_threshold_used": 0.2895,
+  "threshold_source": "validation_set_max_f1",
+  "test_pairs_count": 1600,
+  "test_positive_pairs": 800,
+  "test_negative_pairs": 800,
+  "metrics": {
+    "accuracy": 0.5763,
+    "precision": 0.5478,
+    "recall": 0.8738,
+    "f1_score": 0.6734,
+    "roc_auc": 0.6529,
+    "false_positive_rate": 0.7212,
+    "false_negative_rate": 0.1263,
+    "true_positives": 699,
+    "true_negatives": 223,
+    "false_positives": 577,
+    "false_negatives": 101
+  },
+  "similarity_distribution": {
+    "positive_mean": 0.36424922943115234,
+    "positive_std": 0.0799066498875618,
+    "negative_mean": 0.3259333074092865,
+    "negative_std": 0.059165600687265396
+  },
+  "limitations": [
+    "Pairs are formed by coarse pattern family (Banarasi, Bandhani, Ikat, Pichwai), NOT fine-grained designs.",
+    "Verification predicts whether two sarees belong to the same proxy motif family.",
+    "Color invariance cannot be verified with this proxy setup since authentic same-design/different-color pairs do not exist in the dataset."
+  ]
+}

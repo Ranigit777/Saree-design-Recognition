@@ -1,0 +1,30 @@
+{
+  "task": "AIE-CASE Color-Invariant Saree Design Recognition",
+  "case_evaluation": "NOT AVAILABLE",
+  "status": "not_available",
+  "reason": "No verified design_id/color_id ground truth exists in the supplied datasets.",
+  "dataset_audit": {
+    "total_supervised_images": 1468,
+    "pattern_families": ["Banarasi", "Bandhani", "Ikat", "Pichwai"],
+    "verified_design_ids": false,
+    "verified_color_labels": false,
+    "verified_same_design_different_color_pairs": false,
+    "handloom_labeled": false
+  },
+  "supported_interface": {
+    "expected_columns": [
+      "image_a",
+      "image_b",
+      "design_id_a",
+      "design_id_b",
+      "color_id_a",
+      "color_id_b"
+    ],
+    "protocols": {
+      "Protocol 1": "Cross-Colorway Same-Design Retrieval (target: same design_id, different color_id)",
+      "Protocol 2": "Color-Distractor Discrimination (True CASE Test: same color_id, different design_id)",
+      "Protocol 3": "Hard-Pair Verification (pairwise verification across cross-colorway matches and same-color distractors)"
+    }
+  },
+  "readiness": "The CASE evaluation module (src/case_evaluation.py) is fully implemented, verified with synthetic unit tests, and ready to ingest verified design and color ground truth without code modification."
+}

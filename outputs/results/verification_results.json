@@ -1,0 +1,43 @@
+{
+  "task": "Pattern-Family Proxy Verification",
+  "status": "completed",
+  "threshold_selection_protocol": "validation_set_only",
+  "threshold_selection_source": "outputs/results/val_manifest.csv (1600 validation pairs)",
+  "validation_results": {
+    "best_threshold": 0.2895,
+    "equal_error_rate_threshold": 0.3308,
+    "accuracy": 0.6256,
+    "precision": 0.5833,
+    "recall": 0.88,
+    "f1": 0.7015,
+    "fpr": 0.6288,
+    "fnr": 0.12,
+    "roc_auc": 0.6966
+  },
+  "test_results_with_fixed_threshold": {
+    "fixed_threshold_used": 0.2895,
+    "total_test_pairs": 1600,
+    "positive_test_pairs": 800,
+    "negative_test_pairs": 800,
+    "accuracy": 0.5763,
+    "precision": 0.5478,
+    "recall": 0.8738,
+    "f1": 0.6734,
+    "specificity": 0.2788,
+    "fpr": 0.7212,
+    "fnr": 0.1263,
+    "roc_auc": 0.6529,
+    "pr_auc": 0.6480,
+    "confusion_matrix": {
+      "true_positives": 699,
+      "true_negatives": 223,
+      "false_positives": 577,
+      "false_negatives": 101
+    }
+  },
+  "pair_definitions": {
+    "SAME": "Images belong to the same proxy pattern family (e.g. Banarasi-Banarasi)",
+    "DIFFERENT": "Images belong to different proxy pattern families (e.g. Banarasi-Ikat)"
+  },
+  "scientific_disclaimer": "Threshold was selected strictly on validation data (max F1) and evaluated unchanged on test pairs. This evaluation tests pattern-family proxy discrimination, NOT fine-grained design verification or authentic color-invariance, due to dataset labeling limitations."
+}

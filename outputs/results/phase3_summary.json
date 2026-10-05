@@ -1,0 +1,114 @@
+{
+  "total_images_project": 1633,
+  "total_supervised_images": 1468,
+  "train_images": 1027,
+  "validation_images": 221,
+  "test_images": 220,
+  "handloom_images": 165,
+  "number_of_pattern_families": 4,
+  "class_counts": {
+    "Banarasi": 489,
+    "Ikat": 342,
+    "Pichwai": 321,
+    "Bandhani": 316
+  },
+  "class_percentages": {
+    "Banarasi": 33.31,
+    "Ikat": 23.3,
+    "Pichwai": 21.87,
+    "Bandhani": 21.53
+  },
+  "number_of_md5_groups": 1463,
+  "number_of_augmentation_groups": 606,
+  "md5_leakage_detected": false,
+  "augmentation_leakage_detected": false,
+  "path_leakage_detected": false,
+  "random_seed": 42,
+  "split_strategy": "Grouped split on Indian patterns: union of MD5-identical images and heuristic augmentation_group IDs; ~70/15/15 by image count with greedy balance; handloom excluded from supervised manifests.",
+  "label_strategy": "Proxy Task A \u2014 pattern-family labels only; design_id remains null",
+  "limitations": [
+    "No verified fine-grained design IDs.",
+    "No ground-truth color labels or verified same-design/different-color pairs.",
+    "Pattern families are coarse proxy labels, not unique designs.",
+    "Roboflow augmentation groups used only to prevent split leakage.",
+    "Color augmentation (Phase 4+) encourages robustness; not proof of color invariance."
+  ],
+  "split_verification": {
+    "md5_leakage": false,
+    "augmentation_leakage": false,
+    "path_leakage": false,
+    "md5_leakage_examples": [],
+    "augmentation_leakage_examples": [],
+    "path_leakage_examples": [],
+    "train_count": 1027,
+    "val_count": 221,
+    "test_count": 220,
+    "family_distribution": {
+      "train": {
+        "Banarasi": {
+          "count": 349,
+          "pct": 33.98
+        },
+        "Bandhani": {
+          "count": 233,
+          "pct": 22.69
+        },
+        "Pichwai": {
+          "count": 233,
+          "pct": 22.69
+        },
+        "Ikat": {
+          "count": 212,
+          "pct": 20.64
+        }
+      },
+      "val": {
+        "Ikat": {
+          "count": 73,
+          "pct": 33.03
+        },
+        "Banarasi": {
+          "count": 58,
+          "pct": 26.24
+        },
+        "Pichwai": {
+          "count": 48,
+          "pct": 21.72
+        },
+        "Bandhani": {
+          "count": 42,
+          "pct": 19.0
+        }
+      },
+      "test": {
+        "Banarasi": {
+          "count": 82,
+          "pct": 37.27
+        },
+        "Ikat": {
+          "count": 57,
+          "pct": 25.91
+        },
+        "Bandhani": {
+          "count": 41,
+          "pct": 18.64
+        },
+        "Pichwai": {
+          "count": 40,
+          "pct": 18.18
+        }
+      }
+    },
+    "source_distribution": {
+      "train": {
+        "indian_patterns": 1027
+      },
+      "val": {
+        "indian_patterns": 221
+      },
+      "test": {
+        "indian_patterns": 220
+      }
+    }
+  }
+}

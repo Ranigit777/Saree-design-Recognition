@@ -1,0 +1,24 @@
+task,metric,value,split_or_transform,notes
+Retrieval,Recall@1,0.8773,Test,Pattern-family proxy retrieval
+Retrieval,Recall@3,0.9182,Test,Pattern-family proxy retrieval
+Retrieval,Recall@5,0.9364,Test,Pattern-family proxy retrieval
+Retrieval,Recall@10,0.9727,Test,Pattern-family proxy retrieval
+Retrieval,MRR,0.9079,Test,Mean Reciprocal Rank
+Verification,Threshold,0.2895,Validation,Selected strictly on val F1 max
+Verification,Accuracy,0.5763,Test,Evaluated with fixed val threshold
+Verification,Precision,0.5478,Test,Evaluated with fixed val threshold
+Verification,Recall,0.8738,Test,Evaluated with fixed val threshold
+Verification,F1,0.6734,Test,Evaluated with fixed val threshold
+Verification,ROC-AUC,0.6529,Test,Area under ROC curve
+Color_Robustness,Mean_Cosine_Sim,0.7366,hue_shift_light,Synthetic perturbation stability
+Color_Robustness,Recall@1,0.8364,hue_shift_light,Retention: 95.3%
+Color_Robustness,Mean_Cosine_Sim,0.5782,hue_shift_heavy,Synthetic perturbation stability
+Color_Robustness,Recall@1,0.7364,hue_shift_heavy,Retention: 83.9%
+Color_Robustness,Mean_Cosine_Sim,0.7619,color_jitter,Synthetic perturbation stability
+Color_Robustness,Recall@1,0.8455,color_jitter,Retention: 96.4%
+Color_Robustness,Mean_Cosine_Sim,0.6305,grayscale,Complete desaturation
+Color_Robustness,Recall@1,0.8455,grayscale,Retention: 96.4%
+Color_Robustness,Mean_Cosine_Sim,0.6770,channel_shuffle,RGB to BGR swap
+Color_Robustness,Recall@1,0.7864,channel_shuffle,Retention: 89.6%
+Color_Robustness,Mean_Cosine_Sim,0.7104,color_invert,Palette inversion
+Color_Robustness,Recall@1,0.7227,color_invert,Retention: 82.4%
